@@ -20,10 +20,10 @@ export default function RoomsPage() {
           Private Accommodations
         </span>
         <h1 className="font-serif text-4xl sm:text-6xl font-bold text-forest mt-3 mb-6">
-          Rooms & Suites at Grihum Farms
+          Rooms, Loft & Tent Stays at Grihum Farms
         </h1>
         <p className="text-base text-forest/80 font-light leading-relaxed">
-          Each room is designed with floor-to-ceiling nature views, artisanal wooden furnishings, and complete modern comfort.
+          Choose from our rooms and suites, or ask us about a camping tent stay. The entire farmhouse accommodates up to 16 guests.
         </p>
       </div>
 

@@ -1,4 +1,5 @@
 const Inquiry = require('../models/Inquiry');
+const sendInquiryEmail = require('../utils/emailService');
 
 const createInquiry = async (req, res) => {
   try {
@@ -9,7 +10,17 @@ const createInquiry = async (req, res) => {
     const inquiry = await Inquiry.create({
       name, email, phone, preferredDates, guestsCount, message
     });
-    res.status(201).json({ message: 'Inquiry sent successfully to Kumawat Rythem at Grihum Farms!', inquiry });
+    try {
+      await sendInquiryEmail(inquiry);
+    } catch (emailError) {
+      console.error('Failed to email Grihum Farms inquiry:', emailError.message);
+      return res.status(502).json({
+        message: 'Inquiry was saved, but the email could not be sent. Please try again or contact the host directly.',
+        inquiryId: inquiry._id
+      });
+    }
+
+    res.status(201).json({ message: 'Inquiry saved and emailed to Grihum Farms.', inquiry });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

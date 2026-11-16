@@ -8,13 +8,14 @@ export default function FAQPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const faqs = [
-    { q: "What time is check-in and check-out at Grihum Farms?", a: "Check-in is at 2:00 PM and check-out is at 11:00 AM. Early check-in or late check-out can be requested depending on room availability." },
-    { q: "How many guests can stay at Grihum Farms?", a: "Grihum Farms can accommodate up to 8–12 guests when reserving the Entire Villa, or 2–4 guests per individual suite." },
+    { q: "What time is check-in and check-out at Grihum Farms?", a: "Check-in is at 1:00 PM and check-out is at 11:00 AM. Early check-in or late check-out can be requested depending on room availability." },
+    { q: "How many guests can stay at Grihum Farms?", a: "The Entire Villa has 3 bedrooms and 2 lofts with beds and can accommodate up to 16 guests. Camping tent stays are also available." },
+    { q: "Do you offer camping tent stays?", a: "Yes, camping tent stays are available. Contact the Grihum family to arrange your dates and get the details." },
     { q: "Is breakfast included with our stay?", a: "Yes, you can choose flexible rates with farm breakfast or order authentic home-cooked Rajasthani thalis on request." },
     { q: "Can I book the entire farmhouse for private events or family trips?", a: "Absolutely! You can reserve the Entire Grihum Farms Villa for exclusive access to all suites, lawn gardens, private water spring pool, and outdoor firepit." },
     { q: "Are pets allowed at Grihum Farms?", a: "Yes, we are pet-friendly! Please inform us in advance so we can prepare open garden areas for your furry friends." },
-    { q: "Is parking and Wi-Fi available on site?", a: "Free high-speed Wi-Fi is available across all rooms and lawns, along with free secured parking for up to 5 cars." },
-    { q: "What is the cancellation policy?", a: "Standard rates offer free cancellation up to 48 hours before check-in. Non-refundable discounted rates are non-cancellable." },
+    { q: "Is parking available on site?", a: "Free secured parking is available for up to 5 cars." },
+    { q: "What is the cancellation and refund policy?", a: "All bookings made and paid for in advance are non-refundable. Cancellations or changes to an advance booking are not eligible for a refund." },
     { q: "How far is Grihum Farms from Udaipur city center?", a: "The farmhouse is located approximately 18 km (~30 minutes drive) from Udaipur City Palace and Lake Pichola." }
   ];
 

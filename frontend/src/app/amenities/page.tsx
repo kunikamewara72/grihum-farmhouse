@@ -9,7 +9,6 @@ import {
   Flame,
   Utensils,
   Coffee,
-  Wifi,
   Wind,
   Droplets,
   Heart,
@@ -43,10 +42,9 @@ export default function AmenitiesPage() {
       ]
     },
     {
-      title: "COMFORT & CONNECTIVITY",
-      icon: Wifi,
+      title: "COMFORT & CONVENIENCE",
+      icon: Wind,
       items: [
-        "Free High-Speed Wi-Fi Across Property",
         "Air Conditioning in all Suites",
         "24/7 Hot Water from Solar Heaters",
         "Dedicated Work Desk in Rooms",

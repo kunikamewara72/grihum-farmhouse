@@ -13,10 +13,10 @@ export default function TermsPage() {
         <p>Grihum Farms is an exclusive single-property farmhouse retreat located in Udaipur, India. Bookings apply solely to the selected suite or entire farmhouse villa at Grihum Farms.</p>
 
         <h2 className="font-serif text-xl font-bold text-forest pt-4">2. Check-In & House Rules</h2>
-        <p>Standard check-in begins at 2:00 PM and check-out is by 11:00 AM. Guests are kindly requested to respect the natural surroundings, quiet hours after 10:00 PM, and treat property grounds with care.</p>
+        <p>Standard check-in begins at 1:00 PM and check-out is by 11:00 AM. Guests are kindly requested to respect the natural surroundings, quiet hours after 10:00 PM, and treat property grounds with care.</p>
 
         <h2 className="font-serif text-xl font-bold text-forest pt-4">3. Cancellation & Refunds</h2>
-        <p>Flexible rate bookings permit free cancellation up to 48 hours prior to check-in. Non-refundable promotional rates are non-refundable once payment is completed.</p>
+        <p>All bookings made and paid for in advance are non-refundable. Cancellations or changes to an advance booking are not eligible for a refund, including standard and discounted rates.</p>
       </div>
     </div>
   );

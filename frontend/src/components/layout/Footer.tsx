@@ -36,7 +36,7 @@ export default function Footer() {
 
             <div className="pt-2 flex items-center gap-3">
               <a
-                href="https://wa.me/919829012345"
+                href="https://wa.me/918952027373?text=Hi%21%20I%27m%20interested%20in%20booking%20a%20stay%20at%20Grihum%20Farmhouse.%20Could%20you%20please%20share%20the%20room%20availability%2C%20pricing%2C%20and%20booking%20details%20for%20my%20preferred%20dates%3F"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-semibold px-4 py-2 rounded-full hover:opacity-90 transition-opacity"
@@ -79,15 +79,15 @@ export default function Footer() {
             <div className="space-y-3 text-sm text-cream/80 font-light">
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-olive shrink-0 mt-1" />
-                <span>Udaipur Countryside, Rajasthan, India</span>
+                <span>Dei Mata Temple, Kaya, Udaipur</span>
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-olive shrink-0" />
-                <a href="tel:+919829012345" className="hover:text-sand">+91 98290 12345</a>
+                <a href="tel:+918952027373" className="hover:text-sand">+91 89520 27373</a>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-olive shrink-0" />
-                <a href="mailto:stay@grihumfarms.com" className="hover:text-sand">stay@grihumfarms.com</a>
+                <a href="mailto:grihum.udr@gmail.com" className="hover:text-sand">grihum.udr@gmail.com</a>
               </p>
               <div className="pt-2 text-xs text-sand">
                 <p>Hosted by Kumawat Rythem</p>

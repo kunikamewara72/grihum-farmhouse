@@ -49,7 +49,7 @@ const seedData = async () => {
           'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=1200'
         ],
         amenities: [
-          'Natural Waterfall View', 'Air Conditioning', 'Free High-Speed Wi-Fi', 'Private Ensuite Bath',
+          'Natural Waterfall View', 'Air Conditioning', 'Private Ensuite Bath',
           'Hot Water 24/7', 'Dedicated Workspace', 'Tea & Coffee Maker', 'Private Balcony'
         ],
         features: ['Sound of natural spring water', 'Sunlit breakfast corner', 'Organic toiletries'],
@@ -75,7 +75,7 @@ const seedData = async () => {
           'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&q=80&w=1200'
         ],
         amenities: [
-          'Aravalli Mountain View', 'Air Conditioning', 'Free Wi-Fi', 'Hot Water', 'Coffee Station', 'Wardrobe'
+          'Aravalli Mountain View', 'Air Conditioning', 'Hot Water', 'Coffee Station', 'Wardrobe'
         ],
         features: ['High vaulted wooden ceilings', 'Sunset viewpoint balcony', 'Peaceful seclusion'],
         status: 'active',
@@ -84,12 +84,12 @@ const seedData = async () => {
       {
         slug: 'entire-farmhouse',
         name: 'Entire Grihum Farms Villa',
-        subtitle: 'Complete private access to the entire 2-bedroom villa, spring pool & gardens',
-        description: 'Experience complete exclusivity at Grihum Farms for your family or group. Includes both suites, full access to the natural spring pool, open kitchen, garden dining area, outdoor firepit, and dedicated staff to make your stay effortless.',
-        shortDescription: '8-12 Guests · 2 Bedrooms · 2 King Beds + 4 Mattresses · 2 Bathrooms · Private Spring Pool',
-        capacity: { adults: 8, maxGuests: 12 },
-        bedrooms: 2,
-        beds: '2 King Beds + 4 Floor Mattresses',
+        subtitle: 'Complete private access to the entire 3-bedroom villa with 2 lofts with beds, spring pool & gardens',
+        description: 'Experience complete exclusivity at Grihum Farms for your family or group. Includes 3 bedrooms and 2 lofts with beds, plus full access to the natural spring pool, open kitchen, garden dining area, outdoor firepit, and dedicated staff to make your stay effortless.',
+        shortDescription: 'Up to 16 Guests · 3 Bedrooms · 2 Lofts with Beds · 2 Bathrooms · Private Spring Pool',
+        capacity: { adults: 16, maxGuests: 16 },
+        bedrooms: 3,
+        beds: 'Beds in 3 Bedrooms + 2 Lofts',
         bathrooms: 2,
         pricePerNight: 11500,
         weekendPricePerNight: 13500,
@@ -100,7 +100,7 @@ const seedData = async () => {
           'https://a0.muscache.com/im/pictures/hosting/Hosting-1025782635785916174/original/8484b012-9ce3-4c36-905d-6e0325643023.jpeg'
         ],
         amenities: [
-          'Private Water Spring Pool', 'Full Kitchen Access', 'Outdoor Firepit & Garden', 'Free High-Speed Wi-Fi',
+          'Private Water Spring Pool', 'Full Kitchen Access', 'Outdoor Firepit & Garden',
           'Air Conditioning in all rooms', 'Free Parking for 5 Cars', 'Pet Friendly', 'Authentic Cook on Request'
         ],
         features: ['100% private grounds', 'Natural spring water pool', 'Evening outdoor dining setup'],

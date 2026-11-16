@@ -20,7 +20,6 @@ import {
   CheckCircle,
   ArrowRight,
   ChevronDown,
-  Wifi,
   Coffee,
   Sun
 } from 'lucide-react';
@@ -56,14 +55,16 @@ export default function HomePage() {
     { icon: Utensils, title: "Authentic Local Food", desc: "Traditional Rajasthani thali cooked fresh over firewood using farm herbs." },
     { icon: Flame, title: "Evening Bonfire & Stars", desc: "Gather around the fire pit under crystal-clear night skies." },
     { icon: Dog, title: "Pet Friendly", desc: "Bring your four-legged companions to run freely in garden spaces." },
+    { icon: TreePine, title: "Camping Tent Stays", desc: "Camping tents are also available for an outdoor overnight stay." },
   ];
 
   const faqs = [
-    { q: "What time is check-in and check-out at Grihum Farms?", a: "Check-in begins at 2:00 PM and check-out is by 11:00 AM. Early check-in or late check-out can be requested in advance depending on availability." },
-    { q: "How many total guests can stay at Grihum Farms?", a: "Grihum Farms can accommodate up to 8–12 guests when booking the Entire Farmhouse Villa option, or 2–4 guests per suite." },
+    { q: "What time is check-in and check-out at Grihum Farms?", a: "Check-in begins at 1:00 PM and check-out is by 11:00 AM. Early check-in or late check-out can be requested in advance depending on availability." },
+    { q: "How many total guests can stay at Grihum Farms?", a: "The farmhouse has 3 bedrooms and 2 lofts with beds, and can accommodate up to 16 guests when booked as the Entire Farmhouse Villa. Camping tent stays are also available." },
+    { q: "Do you offer camping tent stays?", a: "Yes, camping tent stays are available. Contact the Grihum family to arrange your dates and get the details." },
     { q: "Is breakfast included with our stay?", a: "You can choose rate options including fresh farm-to-table breakfast or add authentic Rajasthani thalis during checkout." },
     { q: "Can I book the entire farmhouse for complete privacy?", a: "Yes! You can reserve the Entire Grihum Farms Villa for exclusive access to all bedrooms, private spring pool, and lawn gardens." },
-    { q: "Is parking and Wi-Fi available?", a: "Yes, free high-speed Wi-Fi is available across all rooms and common areas, along with secure free parking for up to 5 vehicles." },
+    { q: "Is parking available?", a: "Yes, secure free parking is available for up to 5 vehicles." },
   ];
 
   return (
@@ -153,13 +154,13 @@ export default function HomePage() {
               A quiet retreat where nature, comfort and authentic countryside living come together.
             </h2>
             <p className="text-base text-forest/80 font-light leading-relaxed">
-              Nestled amidst nature in Udaipur, Grihum Farms is an exclusive single-farmhouse villa where the gentle, constant trickle of a natural water spring creates an atmosphere of deep tranquility.
+              Nestled amidst nature in Udaipur, Grihum Farms is a peaceful retreat with 3 bedrooms, 2 lofts with beds, and camping tent stays for guests who want to sleep closer to nature.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-sage/30">
               <div>
-                <span className="text-2xl font-serif font-bold text-olive block">2 Bedrooms</span>
-                <span className="text-xs text-forest/70">Up to 8-12 Guests Total</span>
+                <span className="text-2xl font-serif font-bold text-olive block">3 Bedrooms</span>
+                <span className="text-xs text-forest/70">2 Lofts with Beds · Up to 16 Guests</span>
               </div>
               <div>
                 <span className="text-2xl font-serif font-bold text-olive block">Natural Spring</span>

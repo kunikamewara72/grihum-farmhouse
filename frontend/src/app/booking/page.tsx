@@ -18,6 +18,8 @@ function BookingContent() {
   const preSelectRoomId = searchParams.get('roomId');
   const preCheckIn = searchParams.get('checkIn');
   const preCheckOut = searchParams.get('checkOut');
+  const preAdults = Math.min(16, Math.max(1, Number(searchParams.get('adults') || 2)));
+  const preChildren = Math.min(16 - preAdults, Math.max(0, Number(searchParams.get('children') || 0)));
 
   const today = new Date().toISOString().split('T')[0];
   const tomorrow = addDays(new Date(), 1).toISOString().split('T')[0];
@@ -28,8 +30,8 @@ function BookingContent() {
 
   const [checkIn, setCheckIn] = useState(preCheckIn || today);
   const [checkOut, setCheckOut] = useState(preCheckOut || tomorrow);
-  const [adults, setAdults] = useState(2);
-  const [children, setChildren] = useState(0);
+  const [adults, setAdults] = useState(preAdults);
+  const [children, setChildren] = useState(preChildren);
   const [rateType, setRateType] = useState<'refundable' | 'non_refundable'>('refundable');
 
   const [selectedExpIds, setSelectedExpIds] = useState<string[]>([]);
@@ -51,16 +53,27 @@ function BookingContent() {
   useEffect(() => {
     fetchApi('/rooms').then((data) => {
       setRooms(data);
-      if (preSelectRoomId) {
-        const found = data.find((r: any) => r._id === preSelectRoomId || r.slug === preSelectRoomId);
-        if (found) setSelectedRoom(found);
-      } else if (data.length > 0) {
-        setSelectedRoom(data[0]);
+      const found = preSelectRoomId
+        ? data.find((r: any) => r._id === preSelectRoomId || r.slug === preSelectRoomId)
+        : null;
+      const requestedGuests = preAdults + preChildren;
+      const capacityRoom = requestedGuests > 4
+        ? data.find((r: any) => r.slug === 'entire-farmhouse' && r.capacity?.maxGuests >= requestedGuests)
+        : null;
+      const initialRoom = found || capacityRoom || data[0];
+      if (initialRoom) {
+        setSelectedRoom(initialRoom);
+        const roomMaxGuests = initialRoom.capacity?.maxGuests || 16;
+        const nextAdults = Math.max(1, Math.min(preAdults, roomMaxGuests));
+        setAdults(nextAdults);
+        setChildren(Math.min(preChildren, roomMaxGuests - nextAdults));
       }
     }).catch(console.error);
 
     fetchApi('/experiences').then(setExperiences).catch(console.error);
-  }, [preSelectRoomId]);
+  }, [preSelectRoomId, preAdults, preChildren]);
+
+  const maxRoomGuests = selectedRoom?.capacity?.maxGuests || 16;
 
   // Recalculate price when selection changes
   useEffect(() => {
@@ -153,7 +166,12 @@ function BookingContent() {
                 {rooms.map((room) => (
                   <div
                     key={room.slug}
-                    onClick={() => setSelectedRoom(room)}
+                    onClick={() => {
+                      setSelectedRoom(room);
+                      const nextAdults = Math.max(1, Math.min(adults, room.capacity.maxGuests));
+                      setAdults(nextAdults);
+                      setChildren(Math.min(children, room.capacity.maxGuests - nextAdults));
+                    }}
                     className={`p-4 rounded-2xl border cursor-pointer transition-all flex items-center justify-between ${
                       selectedRoom?._id === room._id
                         ? 'border-olive bg-cream/60 shadow-soft ring-1 ring-olive'
@@ -211,7 +229,7 @@ function BookingContent() {
                     onChange={(e) => setAdults(Number(e.target.value))}
                     className="w-full bg-cream/40 border border-sage/30 rounded-xl p-3 text-sm font-semibold outline-none"
                   >
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+                    {Array.from({ length: Math.max(1, maxRoomGuests - children) }, (_, index) => index + 1).map((n) => (
                       <option key={n} value={n}>{n} {n === 1 ? 'Adult' : 'Adults'}</option>
                     ))}
                   </select>
@@ -223,7 +241,7 @@ function BookingContent() {
                     onChange={(e) => setChildren(Number(e.target.value))}
                     className="w-full bg-cream/40 border border-sage/30 rounded-xl p-3 text-sm font-semibold outline-none"
                   >
-                    {[0, 1, 2, 3, 4].map((n) => (
+                    {Array.from({ length: Math.max(0, maxRoomGuests - adults) + 1 }, (_, n) => n).map((n) => (
                       <option key={n} value={n}>{n} Children</option>
                     ))}
                   </select>
@@ -274,8 +292,8 @@ function BookingContent() {
                     rateType === 'refundable' ? 'border-olive bg-cream/60 font-semibold' : 'border-sage/30'
                   }`}
                 >
-                  <p className="text-sm text-forest">Standard Flexible Rate</p>
-                  <p className="text-xs text-forest/70 font-light mt-1">Free cancellation up to 48 hours before check-in.</p>
+                  <p className="text-sm text-forest">Standard Rate</p>
+                  <p className="text-xs text-forest/70 font-light mt-1">Advance bookings are non-refundable after payment.</p>
                 </div>
                 <div
                   onClick={() => setRateType('non_refundable')}

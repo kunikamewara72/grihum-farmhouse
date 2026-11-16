@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { MapPin, Navigation, Car, Plane, Train, Compass, Phone } from 'lucide-react';
 
 export default function LocationPage() {
+  const mapUrl = 'https://www.google.com/maps/dir/24.5405405,73.703635/Grihum,+Dei+Mata+Temple,+Udaipur,+Deimata,+Rajasthan+313801/@24.4965574,73.6355699,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3967eda5aeab4f95:0xa8d6aa3a1cf9f20a!2m2!1d73.7049225!2d24.4507394?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D';
   const distances = [
     { title: "Udaipur City Center", distance: "18 km", time: "~30 mins drive" },
     { title: "Lake Pichola / City Palace", distance: "20 km", time: "~35 mins drive" },
@@ -93,7 +94,7 @@ export default function LocationPage() {
                   <p className="font-serif text-lg font-bold text-forest">Grihum Farms</p>
                   <p className="text-xs text-forest/70 font-light">Natural Spring & Aravalli Escapes</p>
                   <a
-                    href="https://maps.google.com"
+                    href={mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs font-semibold bg-olive text-cream px-4 py-2 rounded-full shadow-md"

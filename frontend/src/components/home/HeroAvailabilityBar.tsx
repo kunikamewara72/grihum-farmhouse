@@ -97,7 +97,8 @@ export default function HeroAvailabilityBar() {
                   <span className="font-semibold text-sm w-4 text-center">{adults}</span>
                   <button
                     type="button"
-                    onClick={() => setAdults(Math.min(10, adults + 1))}
+                    onClick={() => setAdults(Math.min(16 - children, adults + 1))}
+                    disabled={totalGuests >= 16}
                     className="w-7 h-7 rounded-full border border-forest/30 flex items-center justify-center font-bold"
                   >
                     +
@@ -121,7 +122,8 @@ export default function HeroAvailabilityBar() {
                   <span className="font-semibold text-sm w-4 text-center">{children}</span>
                   <button
                     type="button"
-                    onClick={() => setChildren(Math.min(6, children + 1))}
+                    onClick={() => setChildren(Math.min(16 - adults, children + 1))}
+                    disabled={totalGuests >= 16}
                     className="w-7 h-7 rounded-full border border-forest/30 flex items-center justify-center font-bold"
                   >
                     +

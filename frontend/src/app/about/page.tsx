@@ -17,7 +17,7 @@ export default function AboutPage() {
           A Sanctuary Born from Nature & Water
         </h1>
         <p className="text-base sm:text-lg text-forest/80 font-light leading-relaxed">
-          Grihum Farms was created as a peaceful haven away from city life — where the soothing sounds of a natural water spring harmonize with authentic Rajasthani warmth.
+          Grihum Farms was created as a peaceful haven away from city life, with 3 bedrooms, 2 lofts with beds, and camping tent stays amid the natural spring and authentic Rajasthani warmth.
         </p>
       </div>
 

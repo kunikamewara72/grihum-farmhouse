@@ -127,7 +127,7 @@ export default function BookingConfirmationPage() {
               <p className="text-xs text-forest/70 font-light">Reach host Kumawat Rythem directly on WhatsApp.</p>
             </div>
             <a
-              href="https://wa.me/919829012345"
+              href={`https://wa.me/918952027373?text=${encodeURIComponent("Hi! I'm interested in booking a stay at Grihum Farmhouse. Could you please share the room availability, pricing, and booking details for my preferred dates?")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#25D366] text-white text-xs font-semibold px-5 py-2.5 rounded-full flex items-center gap-2 shrink-0 shadow-md"

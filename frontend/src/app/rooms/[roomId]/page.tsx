@@ -10,7 +10,6 @@ import {
   Users,
   Bed,
   Bath,
-  Wifi,
   Wind,
   Coffee,
   CheckCircle,
